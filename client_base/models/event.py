@@ -1,5 +1,3 @@
-# client_base/models/event.py
-
 from client_base import db
 
 class Event(db.Model):

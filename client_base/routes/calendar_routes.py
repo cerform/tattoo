@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, jsonify, request
-from client_base import db  # Assuming 'db' is your SQLAlchemy instance
-from client_base.models.event import Event  # Adjust based on your actual structure
+from client_base import db
+from client_base.models.event import Event
 
 calendar = Blueprint('calendar', __name__)
 
@@ -16,8 +16,8 @@ def events():
         event_data.append({
             'id': event.id,
             'title': event.title,
-            'start': event.start.isoformat(),
-            'end': event.end.isoformat() if event.end else None,
+            'start': event.start_time.isoformat(),
+            'end': event.end_time.isoformat() if event.end_time else None,
             'description': event.description
         })
     return jsonify(event_data)
@@ -27,8 +27,8 @@ def add_event():
     data = request.json
     new_event = Event(
         title=data['title'],
-        start=data['start'],
-        end=data['end'],
+        start_time=data['start'],
+        end_time=data['end'],
         description=data['description']
     )
     db.session.add(new_event)

@@ -1,5 +1,3 @@
-// calendar.js
-
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
@@ -10,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
-        events: '/get_events' // Endpoint to fetch events from Flask backend
+        events: '/events' // Adjusted to match your Flask route
     });
 
     calendar.render();

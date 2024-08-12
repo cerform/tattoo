@@ -1,5 +1,3 @@
-# client_base/__init__.py
-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -24,7 +22,7 @@ def create_app():
     # Import blueprints here to avoid circular imports
     from client_base.routes.main_routes import main
     from client_base.routes.client_routes import clients
-    from client_base.routes.client_routes import calendar  # Ensure to import the calendar Blueprint here
+    from client_base.routes.calendar_routes import calendar
 
     # Register blueprints
     app.register_blueprint(main)
