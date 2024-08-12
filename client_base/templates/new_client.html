@@ -1,16 +1,20 @@
+<!-- client_base/templates/new_client.html -->
+
 {% extends "base.html" %}
+
 {% block content %}
-<h1>New Client</h1>
-<form method="POST" action="">
-    {{ form.hidden_tag() }}
-    {{ form.name.label }} {{ form.name }}
-    {{ form.surname.label }} {{ form.surname }}
-    {{ form.passport_id.label }} {{ form.passport_id }}
-    {{ form.phone_number.label }} {{ form.phone_number }}
-    {{ form.instagram.label }} {{ form.instagram }}
-    {{ form.date_of_birth.label }} {{ form.date_of_birth }}
-    {{ form.gender.label }} {{ form.gender }}
-    {{ form.has_tattoos.label }} {{ form.has_tattoos }}
-    {{ form.submit }}
-</form>
+    <h1>Add New Client</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <div>{{ form.name.label }} {{ form.name(size=32) }}</div>
+        <div>{{ form.surname.label }} {{ form.surname(size=32) }}</div>
+        <div>{{ form.passport_id.label }} {{ form.passport_id(size=32) }}</div>
+        <div>{{ form.phone_number.label }} {{ form.phone_number(size=32) }}</div>
+        <div>{{ form.instagram.label }} {{ form.instagram(size=32) }}</div>
+        <div>{{ form.date_of_birth.label }} {{ form.date_of_birth() }}</div>
+        <div>{{ form.gender.label }} {{ form.gender() }}</div>
+        <div>{{ form.has_tattoos.label }} {{ form.has_tattoos() }}</div>
+        <div>{{ form.photos.label }} {{ form.photos(size=32) }}</div>
+        <div>{{ form.submit() }}</div>
+    </form>
 {% endblock %}

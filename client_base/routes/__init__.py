@@ -2,6 +2,9 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask import Blueprint, render_template
+from client_base.routes.client_routes import calendar
+from client_base.models.client import Client
+
 
 calendar = Blueprint('calendar', __name__)
 
