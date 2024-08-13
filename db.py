@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 # Configure the SQLite database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///E:/Dev_Ops/tattoo_salon_app/instance/clients.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:$/instance/clients.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Initialize the database
