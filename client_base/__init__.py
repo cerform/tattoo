@@ -11,7 +11,7 @@ def create_app():
     app = Flask(__name__)
 
     # Set configuration values
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///clients.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///instance/clients.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SECRET_KEY'] = 'your_secret_key'  # Replace with a strong secret key
 

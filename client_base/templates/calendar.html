@@ -1,35 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendar</title>
-    <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@5.10.1/main.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@5.10.1/main.min.css" rel="stylesheet" />
-</head>
-<body>
-    <div id='calendar'></div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
 
-    <!-- Include Moment.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            plugins: [ 'dayGrid' ],
+            initialView: 'dayGridMonth',
+            events: '/events',  // Adjust endpoint as necessary
 
-    <!-- Include FullCalendar scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@5.10.1/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@5.10.1/main.min.js"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-
-            // Initialize FullCalendar
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                plugins: ['dayGrid'], // Use the dayGrid plugin
-                initialView: 'dayGridMonth',
-                events: '/events'  // Endpoint to fetch events data
-            });
-
-            calendar.render();  // Render the calendar
+            // Add event creation functionality
+            dateClick: function(info) {
+                var title = prompt('Enter Event Title:');
+                if (title) {
+                    fetch('/events', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            title: title,
+                            start: info.dateStr, // ISO date string
+                            end: info.dateStr // Change this to a specific end date if necessary
+                        })
+                    }).then(response => {
+                        if (response.ok) {
+                            calendar.refetchEvents(); // Refresh events
+                        }
+                    });
+                }
+            }
         });
-    </script>
-</body>
-</html>
+
+        calendar.render();
+    });
+</script>
