@@ -57,4 +57,4 @@ cd tattoo</code></pre>
 </ul>
 
 <h2>Contributing Code of Conduct</h2>
-<p>By participating in this project, you agree to abide by the <a href="CODE_OF_CONDUCT.md">Code of Conduct</a>. Please treat all contributors and community members with respect.</p>
+
