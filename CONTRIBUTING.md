@@ -4,10 +4,7 @@
 
 <h2>How to Contribute</h2>
 
-<h3>1. Reporting Issues</h3>
-<p>If you find a bug or have a feature request, please <a href="https://github.com/cerform/tattoo/issues">open an issue</a> on GitHub. Provide as much detail as possible, including steps to reproduce the issue and any relevant screenshots or error messages.</p>
-
-<h3>2. Fork the Repository</h3>
+<h3>1. Fork the Repository</h3>
 <ol>
     <li>Fork the repository by clicking the "Fork" button at the top of the page.</li>
     <li>Clone the forked repository to your local machine:
@@ -19,27 +16,27 @@ cd tattoo</code></pre>
     </li>
 </ol>
 
-<h3>3. Create a Branch</h3>
+<h3>2. Create a Branch</h3>
 <p>Create a new branch for your feature or bug fix:</p>
 <pre><code>git checkout -b feature-name</code></pre>
 <p>Use a descriptive name for your branch that reflects the feature you're working on or the issue you're fixing.</p>
 
-<h3>4. Make Changes</h3>
+<h3>3. Make Changes</h3>
 <ul>
     <li>Follow the existing code style and conventions used in the project.</li>
     <li>If you're adding a new feature, ensure it's well-documented in the code and includes any necessary tests.</li>
     <li>If you're fixing a bug, include a test that demonstrates the issue is fixed.</li>
 </ul>
 
-<h3>5. Commit Changes</h3>
+<h3>4. Commit Changes</h3>
 <p>Commit your changes with a clear and concise commit message:</p>
 <pre><code>git commit -m "Description of the feature or fix"</code></pre>
 
-<h3>6. Push Changes</h3>
+<h3>5. Push Changes</h3>
 <p>Push your changes to your forked repository:</p>
 <pre><code>git push origin feature-name</code></pre>
 
-<h3>7. Create a Pull Request</h3>
+<h3>6. Create a Pull Request</h3>
 <ol>
     <li>Go to the original repository and click the "New Pull Request" button.</li>
     <li>Select your branch from the list and describe your changes in detail.</li>
