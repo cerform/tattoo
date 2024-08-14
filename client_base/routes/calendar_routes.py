@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request, render_template
 from datetime import datetime
-from client_base.models.event import Event  # Assuming you have an Event model to handle events
-from client_base import db  # Assuming you have a database instance
+from client_base.models.event import Event  # Event model to handle events
+from client_base import db  #  database instance
 
 calendar = Blueprint('calendar', __name__)
 
