@@ -30,7 +30,7 @@ def create_event():
     db.session.commit()
     return jsonify({'message': 'Event created successfully'}), 201
 
-@calendar.route('/calendar_view', methods=['GET'])  # Add this line
+@calendar.route('/calendar_view', methods=['GET'])  
 def calendar_view():
     """Render the calendar view."""
     return render_template('calendar_view.html')  # Ensure this template exists
